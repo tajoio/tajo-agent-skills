@@ -1,0 +1,27 @@
+name: Skill request
+description: Request a new skill or skill improvement.
+title: "Skill request: "
+labels:
+  - skill-request
+body:
+  - type: textarea
+    id: use-case
+    attributes:
+      label: Use case
+      description: What should the agent be able to do?
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Official evidence
+      description: Link official API docs, OpenAPI specs, SDK docs, CLI docs, or webhook docs.
+    validations:
+      required: false
+  - type: textarea
+    id: safety
+    attributes:
+      label: Safety and consent notes
+      description: Mention any auth, consent, suppression, idempotency, or replay constraints.
+    validations:
+      required: false

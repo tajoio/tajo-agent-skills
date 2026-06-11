@@ -1,0 +1,34 @@
+{
+  "name": "tajo-agent-skills",
+  "version": "0.1.0",
+  "description": "Open agent skills for commerce, marketing, CRM, lifecycle messaging, and integration APIs.",
+  "license": "Apache-2.0",
+  "maintainer": "Tajo",
+  "skills": [
+    {
+      "name": "brevo-deep-api-operator",
+      "path": "skills/brevo-deep-api-operator",
+      "category": "brevo",
+      "summary": "Brevo API operations for contacts, lists, events, transactional messaging, webhooks, suppression, and retries."
+    },
+    {
+      "name": "brevo-engagement-designer",
+      "path": "skills/brevo-engagement-designer",
+      "category": "brevo",
+      "summary": "Campaign and dispatch planning with consent, approval, deliverability, budget, and performance guardrails."
+    },
+    {
+      "name": "brevo-connector-solution-builder",
+      "path": "skills/brevo-connector-solution-builder",
+      "category": "brevo",
+      "summary": "Connector design workflow for mapping official vendor APIs into Brevo-ready engagement events and actions."
+    }
+  ],
+  "templates": [
+    {
+      "name": "brevo-http-action-template",
+      "path": "templates/brevo-http-action-template.md",
+      "summary": "HTTP-action template for Brevo API calls executed by sandboxed agents."
+    }
+  ]
+}

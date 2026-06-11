@@ -5,6 +5,23 @@
   "description": "Open agent skills for commerce, marketing, CRM, lifecycle messaging, and integration APIs.",
   "license": "Apache-2.0",
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tajoio/tajo-agent-skills.git"
+  },
+  "homepage": "https://github.com/tajoio/tajo-agent-skills#readme",
+  "bugs": {
+    "url": "https://github.com/tajoio/tajo-agent-skills/issues"
+  },
+  "keywords": [
+    "agent-skills",
+    "brevo",
+    "commerce",
+    "crm",
+    "integrations",
+    "lifecycle-marketing",
+    "tajo"
+  ],
   "scripts": {
     "validate": "node scripts/validate-skills.mjs"
   }

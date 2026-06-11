@@ -10,7 +10,8 @@ const secretPatterns = [
   /ghp_[A-Za-z0-9_]{20,}/,
   /github_pat_[A-Za-z0-9_]{20,}/,
   /xox[baprs]-[A-Za-z0-9-]{20,}/,
-  /(?:api[_-]?key|password|token|secret)\s*[:=]\s*["']?[A-Za-z0-9_./+=-]{16,}/i
+  /(?:api[_-]?key|password|token|secret)\s*[:=]\s*["']?[A-Za-z0-9_./+=-]{16,}/i,
+  /(?:api[_-]?key|password|token|secret)[^\n]{0,60}[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/i
 ];
 
 function fail(message) {
@@ -78,6 +79,29 @@ if (!fs.existsSync(skillsDir)) {
     }
     if (text.split("\n").length > 500) {
       fail(`${skillName}/SKILL.md should stay below 500 lines`);
+    }
+  }
+}
+
+const catalogPath = path.join(root, "catalog.json");
+if (!fs.existsSync(catalogPath)) {
+  fail("missing catalog.json");
+} else {
+  const catalog = JSON.parse(fs.readFileSync(catalogPath, "utf8"));
+  if (!Array.isArray(catalog.skills)) {
+    fail("catalog.json skills must be an array");
+  } else {
+    for (const skill of catalog.skills) {
+      if (!skill.name || !namePattern.test(skill.name)) {
+        fail(`catalog skill has invalid name: ${skill.name}`);
+      }
+      const expectedPath = path.join(root, skill.path ?? "");
+      if (!skill.path || !fs.existsSync(path.join(expectedPath, "SKILL.md"))) {
+        fail(`catalog skill path missing SKILL.md: ${skill.path}`);
+      }
+      if (skill.path && path.basename(skill.path) !== skill.name) {
+        fail(`catalog skill name/path mismatch: ${skill.name}`);
+      }
     }
   }
 }
