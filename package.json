@@ -1,0 +1,11 @@
+{
+  "name": "tajo-agent-skills",
+  "version": "0.1.0",
+  "private": false,
+  "description": "Open agent skills for commerce, marketing, CRM, lifecycle messaging, and integration APIs.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "scripts": {
+    "validate": "node scripts/validate-skills.mjs"
+  }
+}

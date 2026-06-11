@@ -1,0 +1,29 @@
+{
+  "skill_name": "brevo-deep-api-operator",
+  "queries": [
+    {
+      "query": "Can you add these Shopify customers to Brevo and preserve consent?",
+      "should_trigger": true
+    },
+    {
+      "query": "The Brevo webhook sent hard_bounce and unsubscribe events. How should I process them?",
+      "should_trigger": true
+    },
+    {
+      "query": "Send a transactional email through Brevo using a verified sender.",
+      "should_trigger": true
+    },
+    {
+      "query": "How do I retry Brevo events after a 429?",
+      "should_trigger": true
+    },
+    {
+      "query": "Write a CSS grid layout for a pricing page.",
+      "should_trigger": false
+    },
+    {
+      "query": "Summarize this PDF contract.",
+      "should_trigger": false
+    }
+  ]
+}
